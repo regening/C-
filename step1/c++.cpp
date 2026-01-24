@@ -1,4 +1,5 @@
 #include <iostream>                   // 引入标准输入输出库
+#include <string>                     // 处理字符串
 using namespace std;                  // 使用标准命名空间
 
 class Car {                           // 定义一个名为car的类，类是一个模板，描述car这个对象的特征和行为
@@ -16,6 +17,15 @@ int main() {
     const int MAX_VALUE = 100;        // 与 C 一样  定义常量
     int x = 10;
 
+    cout << "Hello, World!" << endl;
+
+    string name = "李泽莹";
+    cout << "Name: " << name << endl;
+
+    int number;
+    cin >> number;
+    cout << "You entered: " << number << endl;
+
     if (x > 5) {                      // 条件判断
         cout << "x is greater than 5" << endl;
     } else {
@@ -30,12 +40,6 @@ int main() {
     myCar.brand = "Toyota";           // 设置 myCar 对象的 brand 为 "Toyota"
     myCar.year = 2020;                // 设置 myCar 对象的 year 为 2020
     myCar.start();                    // 调用 myCar 对象的 start 方法
-    
-
-
-
-
-    cout << "Hello, World!" << endl;
 
     return 0;
 }
