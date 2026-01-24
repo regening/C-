@@ -17,14 +17,13 @@ int main() {
     const int MAX_VALUE = 100;        // 与 C 一样  定义常量
     int x = 10;
 
-    cout << "Hello, World!" << endl;
+    cout << "Hello, World!:" << MAX_VALUE << endl;
 
     string name = "李泽莹";
     cout << "Name: " << name << endl;
 
-    int number;
-    cin >> number;
-    cout << "You entered: " << number << endl;
+    cin >> a;
+    cout << "You entered a: " << a << endl;
 
     if (x > 5) {                      // 条件判断
         cout << "x is greater than 5" << endl;
