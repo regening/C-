@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-/*继承*/
+/*继承: 建一个基类，派生类可以继承基类*/
 class Vehicle {                                                   // 基类
 public:
     string brand;
