@@ -53,3 +53,59 @@ int main() {
   * `private` 继承：基类的所有成员在派生类中都是 `private` 的。
 
 ---
+
+# 2. **多态（Polymorphism）**
+
+多态是面向对象编程的另一个核心特性，允许同一个接口表现不同的行为。通过多态，基类指针或引用可以指向派生类对象，并调用派生类的重写函数。
+
+### 多态的两种类型：
+
+* **编译时多态**：通过函数重载或运算符重载实现。
+* **运行时多态**：通过虚函数（`virtual`）和继承实现。
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Animal {  // 基类
+public:
+    virtual void sound() {  // 虚函数
+        cout << "Animal sound" << endl;
+    }
+};
+
+class Dog : public Animal {  // 派生类
+public:
+    void sound() override {  // 重写虚函数
+        cout << "Woof!" << endl;
+    }
+};
+
+class Cat : public Animal {  // 派生类
+public:
+    void sound() override {  // 重写虚函数
+        cout << "Meow!" << endl;
+    }
+};
+
+int main() {
+    Animal* animal;  
+    Dog dog;
+    Cat cat;
+
+    animal = &dog;
+    animal->sound();  // 输出 "Woof!"，调用 Dog 类的 sound
+
+    animal = &cat;
+    animal->sound();  // 输出 "Meow!"，调用 Cat 类的 sound
+
+    return 0;
+}
+// 输出：
+// Woof!
+// Meow!
+```
+
+在这个例子中，`sound()` 是一个虚函数，允许通过基类指针 `animal` 调用派生类的实现。通过使用 `virtual` 关键字，C++ 实现了运行时的多态。
+
+---
