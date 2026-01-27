@@ -10,19 +10,8 @@
 * **头文件包含**：
   在C++中，仍会使用`#include`来引入外部库，但是C++有一个新的特性——**命名空间**（`namespace`）。这可以帮助避免不同库之间名字冲突。 
 
-  ```cpp
-  #include <iostream>  // 引入标准输入输出库
-  using namespace std;  // 使用标准命名空间
-  ```
 * **主函数**：
   C++的程序从`main`函数开始，和C一样。`int main()`是标准的程序入口，返回一个整数值。
-
-  ```cpp
-  int main() {
-      cout << "Hello, World!" << endl;
-      return 0;
-  }
-  ```
 
 ---
 
@@ -30,23 +19,11 @@
 
 * C++的基础数据类型与C类似，分别是：`int`、`float`、`double`、`char`等。但在C++中可以使用更多的类型，比如`bool`（布尔类型），并且支持**类型推导**（`auto`）：
 
-  ```cpp
-  auto x = 5;  // x 自动推导为 int
-  ```
-
 * string 是 C++ 标准库中提供的一种数据类型，用于表示和操作字符串。
-
-  ```cpp
-  string name;   // 定义了一个名为 name 的字符串
-  ```
 
 * **ps**： `类型推导`指让编译器根据变量的初始化表达式自动推导出变量的类型，即在，声明变量时不需要显式地指定类型，编译器会根据你给定的初始值推导出合适的类型。
 
 * **常量**：在C++中，我们可以使用`const`来定义常量，`const`变量的值不可改变。
-
-  ```cpp
-  const int MAX_VALUE = 100;
-  ```
 
 ---
 
@@ -54,33 +31,14 @@
 
 * **条件语句**：`if`、`else if`、`else`等控制结构是C和C++中一样的。
 
-  ```cpp
-  int x = 10;
-  if (x > 5) {
-      cout << "x is greater than 5" << endl;
-  } else {
-      cout << "x is less than or equal to 5" << endl;
-  }
-  ```
 * **循环**：`for`、`while` 和 `do-while` 语句同C语言一样，用来执行重复的任务。
-
-  ```cpp
-  for (int i = 0; i < 5; ++i) {
-      cout << i << endl;
-  }
-  ```
 
 ---
 
 # 5. **函数**
 
-* 在C++中，函数和C语言中的用法差不多。可以定义**普通函数**和**递归函数**。
+* 在C++中，函数和C语言中的用法差不多。基本可以定义**普通函数**和**递归函数**。
 
-  ```cpp
-  int add(int a, int b) {
-      return a + b;
-  }
-  ```
 * **默认参数**：可为函数的参数指定默认值。
 
   ```cpp
@@ -290,12 +248,7 @@ Car car2("Ford", 2021);   // 使用带参数的构造函数，传入品牌和年
 * **输入输出**：C++使用`iostream`来进行标准输入输出，和C中的`stdio.h`不同。
 
   ```cpp
-  #include <iostream>
-  using namespace std;
-
-  int main() {
-      cout << "Enter a number: ";
-      int number;
+  {   int number;
       cin >> number;
       cout << "You entered: " << number << endl;
       return 0;
