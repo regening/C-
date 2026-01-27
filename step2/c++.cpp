@@ -30,24 +30,24 @@ int main() {
     return 0;
 }*/
 
-/*多态*/
-class Animal {  // 基类
+/*多态：通过多态，指向派生类对象，并调用派生类的重写函数。
+class Animal {                                                  // 基类
 public:
-    virtual void sound() {  // 虚函数
+    virtual void sound() {                                      // 虚函数
         cout << "Animal sound" << endl;
     }
 };
 
-class Dog : public Animal {  // 派生类
+class Dog : public Animal {                                     // 派生类
 public:
-    void sound() override {  // 重写虚函数
+    void sound() override {                                     // 重写虚函数
         cout << "Woof!" << endl;
     }
 };
 
-class Cat : public Animal {  // 派生类
+class Cat : public Animal {                                     // 派生类
 public:
-    void sound() override {  // 重写虚函数
+    void sound() override {                                     // 重写虚函数
         cout << "Meow!" << endl;
     }
 };
@@ -64,4 +64,4 @@ int main() {
     animal->sound();  // 输出 "Meow!"，调用 Cat 类的 sound
 
     return 0;
-}
+}*/
