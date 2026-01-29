@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-/*继承: 建一个基类，派生类可以继承基类
+/*继承: 建一个基类，派生类可以继承基类 */
 class Vehicle {                                                   // 基类
 public:
     string brand;
@@ -28,9 +28,14 @@ int main() {
     myCar.model = "Corolla"; // 派生类成员
     myCar.use();
     return 0;
-}*/
+}
+// 输出：
+// Brand: Toyota, Year: 2020
+// Model: Corolla              
 
-/*多态：通过多态，指向派生类对象，并调用派生类的重写函数。
+
+
+/*多态：通过多态，指向派生类对象，并调用派生类的重写函数。*/
 class Animal {                                                  // 基类
 public:
     virtual void sound() {                                      // 虚函数
@@ -51,7 +56,7 @@ public:
         cout << "Meow!" << endl;
     }
 };
-
+// `sound()` 是一个虚函数，允许通过基类指针 `animal` 调用派生类的实现。通过使用 `virtual` 关键字，C++ 实现了运行时的多态。
 int main() {
     Animal* animal;  
     Dog dog;
@@ -64,4 +69,47 @@ int main() {
     animal->sound();  // 输出 "Meow!"，调用 Cat 类的 sound
 
     return 0;
-}*/
+}
+// 输出：
+// Woof!
+// Meow!
+
+
+// 函数模板：`add()` 是一个函数模板，它根据传入参数的类型自动推导出返回类型。
+template <typename T>  // T 是一个类型参数
+T add(T a, T b) {
+    return a + b;
+}
+
+int main() {
+    cout << add(5, 3) << endl;  // 调用 int 类型
+    cout << add(2.5, 3.5) << endl;  // 调用 double 类型
+    return 0;
+}
+// 输出：
+// 8
+// 6
+
+// 类模板：`Box` 是一个类模板，可以接受任何类型 `T`，根据传入的类型，类会自动处理。
+
+template <typename T>
+class Box {
+private:
+    T value;
+public:
+    Box(T v) : value(v) {}
+    T getValue() { return value; }
+};
+
+int main() {
+    Box<int> intBox(10);
+    cout << intBox.getValue() << endl;  // 输出 10
+
+    Box<string> strBox("Hello");
+    cout << strBox.getValue() << endl;  // 输出 "Hello"
+
+    return 0;
+}
+// 输出：
+// 10 
+// Hello
