@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>                  // 引入智能指针库
 using namespace std;
 
 /*继承: 建一个基类，派生类可以继承基类 */
@@ -135,3 +136,21 @@ int main() {
 }
 // 输出：Error: Division by zero!
 // 当除数为零时，程序会抛出一个异常 `"Division by zero!"`，并且在 `main()` 函数中捕获并处理异常。
+
+
+// 智能指针使用
+class MyClass {
+public:
+    MyClass() { cout << "MyClass created" << endl; }
+    ~MyClass() { cout << "MyClass destroyed" << endl; }
+};
+
+int main() {
+    unique_ptr<MyClass> ptr(new MyClass());  // 使用 unique_ptr 管理对象
+    // 不需要手动删除 ptr，程序结束时自动销毁
+    return 0;
+}
+// 输出：
+// MyClass created
+// MyClass destroyed
+// `std::unique_ptr` 会在超出作用域时自动释放内存，避免手动调用 `delete`。
