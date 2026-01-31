@@ -113,3 +113,25 @@ int main() {
 // 输出：
 // 10 
 // Hello
+
+
+// 异常处理
+int divide(int a, int b) {
+    if (b == 0) {
+        throw "Division by zero!";  // 抛出异常
+    }
+    return a / b;
+}
+
+int main() {
+    try {
+        cout << divide(10, 0) << endl;  // 捕获异常
+    }
+    catch (const char* msg) {
+        cout << "Error: " << msg << endl;  // 处理异常
+    }
+
+    return 0;
+}
+// 输出：Error: Division by zero!
+// 当除数为零时，程序会抛出一个异常 `"Division by zero!"`，并且在 `main()` 函数中捕获并处理异常。
