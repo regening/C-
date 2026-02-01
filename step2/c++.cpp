@@ -35,7 +35,6 @@ int main() {
 // Model: Corolla              
 
 
-
 /*多态：通过多态，指向派生类对象，并调用派生类的重写函数。*/
 class Animal {                                                  // 基类
 public:
