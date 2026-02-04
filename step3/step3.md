@@ -91,3 +91,34 @@ int main() {
 ```
 
 ---
+
+### 4. **多线程编程**
+
+随着多核处理器的普及，C++11 引入了原生的多线程支持，允许程序同时运行多个任务。你可以利用 `std::thread` 来创建和管理线程。
+
+**基本线程使用**
+
+`std::thread` 类允许创建线程，并将任务分配给每个线程。
+
+```cpp
+// 创建线程
+#include <iostream>
+#include <thread>            // 引入多线程库
+using namespace std;
+
+void print() {
+    cout << "Hello from thread!" << endl;
+}
+
+int main() {
+    thread t(print);    // 创建并启动线程
+    t.join();                // 等待线程结束
+    
+    cout << "Main thread finished." << endl;
+    return 0;
+}
+```
+
+在上面的代码中，主线程创建了一个新的线程 `t` 来运行 `print` 函数，主线程通过 `join` 等待新线程结束。
+
+---
