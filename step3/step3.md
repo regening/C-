@@ -122,3 +122,32 @@ int main() {
 在上面的代码中，主线程创建了一个新的线程 `t` 来运行 `print` 函数，主线程通过 `join` 等待新线程结束。
 
 ---
+
+# 5. **模板与泛型编程**
+
+模板在 C++ 中是非常重要的，允许编写与类型无关的代码，可以提高代码的复用性。
+
+### 5.1 **函数模板**
+
+通过模板，可以编写接受不同类型参数的函数。
+
+```cpp
+template <typename T>
+T add(T a, T b) {
+    return a + b;
+}
+```
+
+### 5.2 **类模板**
+
+类模板允许定义一个类，类中的成员数据和成员函数都与类型相关。
+
+```cpp
+template <typename T>
+class Box {
+public:
+    T value;
+    Box(T v) : value(v) {}
+    T getValue() { return value; }
+};
+```
